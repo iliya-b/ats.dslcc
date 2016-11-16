@@ -9,3 +9,6 @@ Require-Bundle: com.zenika.aicdsl,
  org.eclipse.xtext.ide,
  org.eclipse.xtext.xbase.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.zenika.ide.contentassist.antlr.internal,
+ com.zenika.ide.contentassist.antlr
+
