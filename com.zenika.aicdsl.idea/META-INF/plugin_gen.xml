@@ -1,0 +1,93 @@
+<idea-plugin version="2">
+	<extensions defaultExtensionNs="org.eclipse.xtext.idea">
+		<package
+			uri="http://www.zenika.com/Aicdsl"
+			class="com.zenika.aicdsl.AicdslPackage"
+		/>
+		<resourceFactory 
+			type="aic"
+			class="org.eclipse.xtext.resource.IResourceFactory"
+			factoryClass="com.zenika.idea.AicdslExtensionFactory"
+		/>
+		<resourceServiceProvider
+			uriExtension="aic"
+			class="org.eclipse.xtext.idea.resource.IResourceIdeaServiceProvider"
+			factoryClass="com.zenika.idea.AicdslExtensionFactory"
+		/>
+
+		<lang.setup
+			language="com.zenika.Aicdsl"
+			implementationClass="com.zenika.idea.AicdslIdeaSetup"
+		/>
+	</extensions>
+
+	<extensions defaultExtensionNs="com.intellij">
+		<psi.treeChangePreprocessor implementation="com.zenika.idea.lang.psi.AicdslCodeBlockModificationListener"/>
+
+		<fileTypeFactory implementation="com.zenika.idea.lang.AicdslFileTypeFactory"/>
+		<stubElementTypeHolder class="com.zenika.idea.lang.AicdslElementTypeProvider"/>
+		<lang.ast.factory 
+			language="com.zenika.Aicdsl"
+			factoryClass="com.zenika.idea.AicdslExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.lang.BaseXtextASTFactory"
+		/>
+		<lang.parserDefinition 
+			language="com.zenika.Aicdsl"
+			factoryClass="com.zenika.idea.AicdslExtensionFactory"
+			implementationClass="com.zenika.idea.lang.parser.AicdslParserDefinition"
+		/>
+		<lang.findUsagesProvider 
+			language="com.zenika.Aicdsl"
+			factoryClass="com.zenika.idea.AicdslExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.findusages.BaseXtextFindUsageProvider"
+		/>
+		<lang.refactoringSupport 
+			language="com.zenika.Aicdsl"
+			factoryClass="com.zenika.idea.AicdslExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.refactoring.BaseXtextRefactoringSupportProvider"
+		/>
+		<lang.namesValidator 
+			language="com.zenika.Aicdsl"
+			factoryClass="com.zenika.idea.AicdslExtensionFactory"
+			implementationClass="com.intellij.lang.refactoring.NamesValidator"
+		/>
+		<lang.syntaxHighlighterFactory key="com.zenika.Aicdsl" implementationClass="com.zenika.idea.highlighting.AicdslSyntaxHighlighterFactory" />
+		<lang.braceMatcher 
+			language="com.zenika.Aicdsl"
+			factoryClass="com.zenika.idea.AicdslExtensionFactory"
+			implementationClass="com.intellij.lang.PairedBraceMatcher"
+		/>
+		<annotator 
+			language="com.zenika.Aicdsl"
+			factoryClass="com.zenika.idea.AicdslExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.annotation.IssueAnnotator"
+		/>
+		<completion.contributor language="com.zenika.Aicdsl" implementationClass="com.zenika.idea.completion.AicdslCompletionContributor"/>
+		<pom.declarationSearcher implementation="com.zenika.idea.lang.pom.AicdslPomDeclarationSearcher"/>
+
+		<lang.psiStructureViewFactory 
+			language="com.zenika.Aicdsl"
+			factoryClass="com.zenika.idea.AicdslExtensionFactory"
+			implementationClass="com.intellij.lang.PsiStructureViewFactory"
+		/>
+		<facetType implementation="com.zenika.idea.facet.AicdslFacetType"/>
+		<lang.documentationProvider 
+			language="com.zenika.Aicdsl"
+			factoryClass="com.zenika.idea.AicdslExtensionFactory"
+			implementationClass="org.eclipse.xtext.idea.documentation.IdeaDocumentationProvider"
+		/>
+		<colorSettingsPage implementation="com.zenika.idea.highlighting.AicdslColorSettingsPage"/>
+		<highlightVisitor implementation="com.zenika.idea.highlighting.AicdslSemanticHighlightVisitor"/>
+
+		<lang.formatter 
+			language="com.zenika.Aicdsl"
+			factoryClass="com.zenika.idea.AicdslExtensionFactory"
+			implementationClass="com.intellij.formatting.FormattingModelBuilder"
+		/>
+		<lang.commenter 
+			language="com.zenika.Aicdsl"
+			factoryClass="com.zenika.idea.AicdslExtensionFactory"
+			implementationClass="com.intellij.lang.CodeDocumentationAwareCommenter"
+		/>
+	</extensions>
+</idea-plugin>
