@@ -30,7 +30,7 @@ public class Generate {
 
 		// load a resource by URI, in this case from the file system
 		try {
-			//uri = URI.createFileURI("/home/zenika/Workspace/com.zenika.aicdsl.parent/com.zenika.aicdsl/src/main/java/com/zenika/test.aic");
+			//uri = URI.createFileURI("/home/zenika/Workspace/com.zenika.aicdsl.parent/com.zenika.aicdsl/src/com/zenika/test.aic");
 			URI uri = URI.createFileURI(System.getProperty("user.dir")+"/DslFiles/test.aic");
 			Resource resource = resourceSet.getResource(uri, true);
 			

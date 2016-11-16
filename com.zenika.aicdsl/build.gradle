@@ -1,3 +1,7 @@
+apply plugin:'application'
+
+mainClassName = "com.zenika.generator.AicdslGenerator.doGenerate"
+
 dependencies {
 	compile "org.eclipse.xtext:org.eclipse.xtext:${xtextVersion}"
 	compile "org.eclipse.xtext:org.eclipse.xtext.xbase:${xtextVersion}"
@@ -23,6 +27,13 @@ task generateXtextLanguage(type: JavaExec) {
 	args += "-p"
 	args += "rootPath=/${projectDir}/.."
 }
+
+task(generateJavaFile, dependsOn: 'classes', type: JavaExec) {
+	main = 'com.zenika.Generate'
+	classpath = sourceSets.main.runtimeClasspath
+}
+
+defaultTasks 'generateJavaFile'
 
 generateXtext.dependsOn(generateXtextLanguage)
 clean.dependsOn(cleanGenerateXtextLanguage)
