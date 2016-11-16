@@ -1,0 +1,11 @@
+Feature: "Best feature ever"
+   Scenario: "Best scenario ever"
+      Set sensor TYPE_LIGHT at 42
+      Take a screenshot
+   End
+
+   Scenario: "Worst scenario ever"
+      Set battery level at 1
+   End
+End
+

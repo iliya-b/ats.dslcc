@@ -1,9 +1,60 @@
-grammar com.zenika.Aicdsl with org.eclipse.xtext.common.Terminals
+grammar com.zenika.Aicdsl with org.eclipse.xtext.common.Terminals hidden (WS, ML_COMMENT, SL_COMMENT)
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 generate aicdsl "http://www.zenika.com/Aicdsl"
 
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
+Dsl :
+  (elements += Type)*
+;
+
+FLOAT returns ecore::EFloat: INT ('.' INT)?;
+
+Type:
+  Feature
+;
+
+Feature:
+	'Feature: ' (title=STRING)?
+		(scenarios += Scenario)+
+	'End'
+;
+
+
+Scenario:
+	'Scenario: ' (title=STRING)?
+		(actions += Action)+
+	'End'
+;
+
+Action:
+	Sensor | Screenshot | Click | Stop | Run | Battery | Gps
+;
+
+Sensor:
+	'Set sensor' sensorName=ID 'at' value=INT
+	(title=[Scenario|STRING])?
+;
+
+Battery:
+	"Set battery level at" value=INT
+;
+
+Gps:
+	"Set Gps position at" lat=FLOAT "," lon=FLOAT "," alti=FLOAT
+;
+
+Screenshot:
+	"Take a screenshot"
+;
+
+Click:
+	"Click on " buttonName=ID " button"
+;
+
+Stop:
+	"Kill application"
+;
+
+Run:
+	"Run" appName=ID
+;
