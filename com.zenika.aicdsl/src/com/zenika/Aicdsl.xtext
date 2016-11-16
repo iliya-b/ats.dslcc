@@ -1,0 +1,9 @@
+grammar com.zenika.Aicdsl with org.eclipse.xtext.common.Terminals
+
+generate aicdsl "http://www.zenika.com/Aicdsl"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

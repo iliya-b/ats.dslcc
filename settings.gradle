@@ -1,0 +1,5 @@
+include 'com.zenika.aicdsl'
+include 'com.zenika.aicdsl.ide'
+include 'com.zenika.aicdsl.idea'
+include 'com.zenika.aicdsl.web'
+include 'com.zenika.aicdsl.tests'
