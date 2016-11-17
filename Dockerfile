@@ -34,8 +34,12 @@ RUN chown -R developer.developer /home/developer
 USER developer
 WORKDIR /home/developer
 
+# run a first compilation to download dependencies
+RUN gradle generateJavaFile && \
+    rm /home/developer/com.zenika.aicdsl/DslFiles/* && \
+    chmod g+rsx /home/developer/com.zenika.aicdsl/DslFiles
+
 RUN gradle compileJava --stacktrace
 
 CMD gradle jettyRun
-
 
