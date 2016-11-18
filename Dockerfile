@@ -39,7 +39,7 @@ RUN gradle generateJavaFile && \
     rm /home/developer/com.zenika.aicdsl/DslFiles/* && \
     chmod g+rsx /home/developer/com.zenika.aicdsl/DslFiles
 
-RUN gradle compileJava --stacktrace
+# RUN gradle compileJava --stacktrace
 
 CMD gradle jettyRun
 
