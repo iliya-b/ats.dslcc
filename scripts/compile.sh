@@ -16,7 +16,7 @@ fi
 
 # Is there any test ?
 if ! grep -q @Test /home/developer/com.zenika.aicdsl/DslFiles/Testing.java; then
-	echo "ERROR: No @Test methods was generated"
-	exit 20
+    echo "ERROR: No @Test methods was generated"
+    exit 20
 fi
 
