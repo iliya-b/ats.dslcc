@@ -5,7 +5,7 @@ To generate java file, use :
 
 # AiC DSL
 
-Example : *test_file_example.aicdsl*
+Example : *test_file_example.aic*
 
     Feature: "Example feature"
     
