@@ -1,7 +1,7 @@
 grammar com.zenika.Aicdsl with org.eclipse.xtext.common.Terminals hidden (WS, ML_COMMENT, SL_COMMENT)
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
-generate dsl "http://www.zenika.com/aic/Dsl"
+generate aicdsl "http://www.zenika.com/Aicdsl"
 
 Dsl :
   (elements += Type)*
