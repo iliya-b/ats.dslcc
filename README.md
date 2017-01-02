@@ -9,13 +9,22 @@ Example : *test_file_example.aic*
 
     Feature: "Example feature"
     
-        Scenario: "Example scenario 1"
-            Take a screenshot
+        Scenario: "Scenario 1"
+            Click on “Sensor”
+            Scroll from "Picture" to "Photometer"
+            Scroll from "Photometer" to "Gyroscope
+            Click on "Proximity Sensor"
+            Type "Value is going to change..." into "R.id.input_exemple"
+            Set sensor "TYPE_PROXIMITY" at 18
+            Replace "It's working !" into "R.id.input_exemple"
+            Click on "Proximity Sensor"
+            Scroll from "Proximity Sensor" to "Bluetooth"
+            Click on "Ambient Thermometer"
         End
         
-        Scenario: "Example scenario 2"
-            Set sensor LIGHT_SENSOR at 42
+        Scenario: "Scenario 2"
             Set battery level at 5
+            Check if "Low battery" exists
         End
         
     End
