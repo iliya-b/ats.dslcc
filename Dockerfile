@@ -13,7 +13,7 @@ RUN dpkg --add-architecture i386 && \
     apt-get update -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
         busybox \
-        gradle-2.10 \
+        gradle-4.10.3 \
         lib32z1 \
         libstdc++6:i386 \
         lib32stdc++6 \
